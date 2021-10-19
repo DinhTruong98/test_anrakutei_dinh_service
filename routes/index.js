@@ -7,7 +7,7 @@ var {
   register,
   getUserInfoById,
 } = require("../controllers/userController.js");
-var { getUniversity } = require("../controllers/universityController.js");
+var { getUniversity, searchUniversityByName } = require("../controllers/universityController.js");
 /* GET users listing. */
 const jwt = require("jsonwebtoken");
 
@@ -58,5 +58,6 @@ router.post("/login", isLoggedIn, login);
 router.get("/logout", isAuth, login);
 router.get("/getUserFav", isAuth, getUserFav);
 router.get("/getUniversity", getUniversity);
+router.get("/searchUniversityByName", searchUniversityByName);
 
 module.exports = router;
